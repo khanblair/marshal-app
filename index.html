@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marshal: run many AI coding agents on a kanban board</title>
+<meta name="description" content="Marshal runs many AI coding agents at once. Each task is a card with its own agent in its own Git worktree, and the background service moves the cards for you.">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="mark" src="assets/marshal-mark.png" alt="" width="28" height="28">Marshal</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#connections">Connections</a>
+      <a href="privacy/">Privacy</a>
+      <a href="https://github.com/khanblair/marshal">GitHub</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<div class="scrim" aria-hidden="true"></div>
+<aside class="drawer" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer-head">
+    <a class="brand" href="./"><img class="mark" src="assets/marshal-mark.png" alt="" width="28" height="28">Marshal</a>
+    <button class="menu-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav aria-label="Menu">
+      <a href="#how">How it works</a>
+      <a href="#connections">Connections</a>
+      <a href="privacy/">Privacy</a>
+      <a href="https://github.com/khanblair/marshal">GitHub</a>
+  </nav>
+</aside>
+
+<main id="main">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">In active development, not released yet</p>
+        <h1>Run many AI coding agents at once, on a kanban board.</h1>
+        <p class="lead">Every task is a card. Every card gets its own agent in its own Git worktree. Marshal watches what is really happening and moves the cards for you.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/khanblair/marshal">Follow the project on GitHub</a>
+          <a class="btn" href="privacy/">Read the privacy policy</a>
+        </div>
+      </div>
+
+      <figure style="margin:0">
+        <div class="board" aria-hidden="true">
+          <div class="lane working"><h3>Working</h3>
+            <div class="tile">Add a dark mode toggle<small>Agent 1 · own worktree</small></div>
+            <div class="tile">Write the CSV export<small>Agent 2 · own worktree</small></div>
+          </div>
+          <div class="lane needs"><h3>Needs you</h3>
+            <div class="tile">Fix the login redirect<small>Asked a question</small></div>
+          </div>
+          <div class="lane review"><h3>In review</h3>
+            <div class="tile">Update the CI cache<small>Pull request open</small></div>
+          </div>
+          <div class="lane ready"><h3>Ready to merge</h3>
+            <div class="tile">Rename the settings page<small>Checks passed</small></div>
+          </div>
+        </div>
+        <figcaption class="caption">An illustration of the board, not a screenshot.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="how" aria-labelledby="how-h">
+      <h2 id="how-h">How it works</h2>
+      <p class="section-lead">Marshal is a lightweight desktop app with a background service. Each project is a Git repository with one board.</p>
+      <ol class="steps">
+        <li><h3>One card, one task</h3><p>Describe the work on a card. Start it, and it gets an agent of its own.</p></li>
+        <li><h3>Its own worktree</h3><p>Each agent works in an isolated Git worktree, so many tasks run at once without breaking each other.</p></li>
+        <li><h3>Marshal keeps watch</h3><p>The service follows agent activity, pull requests, CI, and reviews, and moves cards as things change. You always see what needs you.</p></li>
+        <li><h3>Ready work gets merged</h3><p>Finished cards are merged into the branch you choose. A conflict Marshal cannot settle comes back to you.</p></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="works-h">
+      <h2 id="works-h">Works with what you already use</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Coding agents</h3>
+          <ul class="pills">
+            <li>Claude Code</li><li>Codex</li><li>Gemini CLI</li><li>Other agent CLIs</li>
+          </ul>
+          <p style="margin-top:12px">Or the built-in agent, which uses your own API keys: Anthropic, OpenAI, Gemini, DeepSeek, OpenRouter, and local models.</p>
+        </div>
+        <div class="card">
+          <h3>Services</h3>
+          <ul class="pills">
+            <li>GitHub</li><li>Trello</li><li>Google Calendar</li><li>Gmail</li><li>Telegram</li><li>Discord</li><li>ntfy</li><li>Obsidian</li>
+          </ul>
+          <p style="margin-top:12px">Every connection is optional. Marshal works without any of them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="connections" aria-labelledby="conn-h">
+      <h2 id="conn-h">What Marshal asks to connect, and why</h2>
+      <p class="section-lead">You connect your own accounts, and you can disconnect at any time. Marshal runs on your computer, so these connections go from your computer to the service, not through a Marshal server.</p>
+
+      <div class="connect">
+        <div class="card">
+          <span class="tag">GITHUB</span>
+          <h3>Your repositories</h3>
+          <p>Marshal signs in to GitHub with the <strong>Marshal Kanban</strong> GitHub App. You choose which accounts and organizations it can see, and whether that is all repositories or only some.</p>
+          <p>It is how Marshal opens pull requests, watches CI, and reads reviews.</p>
+        </div>
+        <div class="card">
+          <span class="tag">GOOGLE CALENDAR · READ ONLY</span>
+          <h3>Your calendar</h3>
+          <p>Marshal reads events from the calendars you tick. It shows them next to your cards, adds today's events to your morning brief, lets a schedule start from an event, and keeps alerts quiet while you are busy.</p>
+          <p>It cannot create, change, or delete an event.</p>
+        </div>
+        <div class="card">
+          <span class="tag">GMAIL · READ ONLY · OPTIONAL</span>
+          <h3>One label</h3>
+          <p>You pick a label. Marshal reads the subject, sender, and a short preview of messages carrying it, and turns each into a card once.</p>
+          <p>It cannot send, delete, label, or change any mail.</p>
+        </div>
+      </div>
+      <p class="note">Google Calendar and Gmail each ask for their own permission, so you can use one without the other. The details, including where this data is kept, are in the <a href="privacy/#google">privacy policy</a>.</p>
+
+      <h3 style="margin-top:36px">The Marshal Kanban GitHub App</h3>
+      <div class="table-wrap">
+        <table>
+          <caption>What the App can do once you install it</caption>
+          <thead><tr><th scope="col">Permission</th><th scope="col">Access</th><th scope="col">Why Marshal asks for it</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Contents</th><td>Read and write</td><td>Read your code, push the branch for each card, and merge when you approve.</td></tr>
+            <tr><th scope="row">Pull requests</th><td>Read and write</td><td>Open, update, review, and merge pull requests.</td></tr>
+            <tr><th scope="row">Issues</th><td>Read and write</td><td>Turn issues into cards and comment on them.</td></tr>
+            <tr><th scope="row">Actions</th><td>Read and write</td><td>Watch CI runs, read failed logs, and re-run a failed job.</td></tr>
+            <tr><th scope="row">Checks</th><td>Read only</td><td>See whether a pull request's checks passed.</td></tr>
+            <tr><th scope="row">Metadata</th><td>Read only</td><td>Required by GitHub for every app.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">The App also has read-only access to code quality, Codespaces, merge queues, Dependabot alerts, and your user issue fields. Marshal cannot change anything with those.</p>
+      <p class="note">Review or remove Marshal any time: <a href="https://github.com/settings/apps/authorizations">authorized apps</a> and <a href="https://github.com/settings/installations">installed apps</a>.</p>
+    </section>
+
+    <section aria-labelledby="priv-h">
+      <h2 id="priv-h">Privacy in short</h2>
+      <div class="cols">
+        <div class="card"><h3>It runs on your computer</h3><p>No Marshal cloud server sits between you and GitHub, Google, or your model provider.</p></div>
+        <div class="card"><h3>Keys stay in your keychain</h3><p>Tokens and API keys are kept in your operating system's keychain, not in files.</p></div>
+      </div>
+      <p class="note"><a href="privacy/">Read the full privacy policy</a></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Marshal is in active development. Product names belong to their owners, and Marshal is not affiliated with them.</p>
+    <nav aria-label="Footer">
+      <a href="privacy/">Privacy policy</a>
+      <a href="https://github.com/khanblair/marshal-app/issues">Support</a>
+      <a href="https://github.com/khanblair/marshal">Source</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

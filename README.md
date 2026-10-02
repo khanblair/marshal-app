@@ -26,7 +26,10 @@ The Marshal GitHub App lets Marshal work with your repositories. When you instal
 | Pull requests | Read and write | Open, update, review, and merge pull requests |
 | Issues | Read and write | Turn issues into cards and comment on them |
 | Actions | Read and write | Watch CI runs, read failed logs, and re-run a failed job |
+| Checks | Read only | See whether a pull request's checks passed |
 | Metadata | Read only | Required by GitHub for every app |
+
+The App also has read-only access to code quality, Codespaces, merge queues, Dependabot alerts, and your user issue fields. Marshal cannot change anything with those.
 
 You can review or remove Marshal at any time:
 
@@ -38,6 +41,8 @@ You can review or remove Marshal at any time:
 - Marshal runs on your computer. No Marshal cloud server sits between you and GitHub.
 - Your tokens are kept in your operating system's keychain.
 - Marshal talks to the services you connect, such as GitHub or the model provider you choose.
+
+Full policy: <https://khanblair.github.io/marshal-app/privacy/>. Home page: <https://khanblair.github.io/marshal-app/>.
 
 ## Support
 
