@@ -42,7 +42,7 @@ You can review or remove Marshal at any time:
 - Your tokens are kept in your operating system's keychain.
 - Marshal talks to the services you connect, such as GitHub or the model provider you choose.
 
-Full policy: <https://khanblair.github.io/marshal-app/privacy/>. Home page: <https://khanblair.github.io/marshal-app/>.
+Full policy: <https://khanblair.github.io/marshal-app/privacy/>. Terms of service: <https://khanblair.github.io/marshal-app/terms/>. Home page: <https://khanblair.github.io/marshal-app/>.
 
 ## Support
 
