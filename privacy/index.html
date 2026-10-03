@@ -72,7 +72,7 @@
 
     <main id="main" class="prose">
       <h1>Privacy policy</h1>
-      <p class="updated">Last updated 2 October 2026. This applies to the Marshal desktop app and its background service ("Marshal"), and to this website.</p>
+      <p class="updated">Last updated 3 October 2026. This applies to the Marshal desktop app and its background service ("Marshal"), and to this website.</p>
 
       <div class="summary">
         <h2>The short version</h2>
@@ -115,7 +115,7 @@
             <tr><th scope="row">What Marshal reads</th><td>Your list of calendars, and the events (title, time, calendar) on the calendars you tick.</td><td>The subject, the sender, and a short preview of messages that carry the one label you choose. Checked about every five minutes.</td></tr>
             <tr><th scope="row">What it cannot do</th><td>Create, change, or delete an event.</td><td>Send, delete, label, or change any message. Marshal does not read whole messages or attachments.</td></tr>
             <tr><th scope="row">What it is used for</th><td>Showing events in Marshal's calendar and on Home, adding today's events to your morning brief, letting a schedule start from an event, and keeping alerts quiet during events.</td><td>Turning each labelled message into a card, once, so you can work on it with an agent.</td></tr>
-            <tr><th scope="row">Where it is kept</th><td>In memory on your computer only, refreshed about once a minute and gone when Marshal quits. When an event starts a schedule, the event's title and start time are also recorded in that schedule's run history and in Marshal's local log, on your computer.</td><td>Each message becomes a card in your local database: the subject is the title, and the sender and preview are the body. It stays until you delete the card.</td></tr>
+            <tr><th scope="row">Where it is kept</th><td>In memory on your computer only, refreshed about once a minute, and gone when you disconnect or Marshal quits. When an event starts a schedule, the event's title and start time are also recorded in that schedule's run history and in Marshal's local log, on your computer.</td><td>Each message becomes a card in your local database: the subject is the title, and the sender and preview are the body. It stays until you delete the card.</td></tr>
             <tr><th scope="row">Access tokens</th><td colspan="2">Kept in your operating system's keychain, on your computer. Marshal asks Google for a new one when needed.</td></tr>
           </tbody>
         </table>
@@ -146,7 +146,7 @@
       <h2 id="choices">5. Disconnecting and deleting</h2>
       <ul>
         <li><strong>In Marshal:</strong> Settings, Integrations, then Disconnect on a connection. This removes Marshal's stored tokens and settings for it from your computer. Cards already made from your email stay until you delete them.</li>
-        <li><strong>At Google:</strong> Disconnecting in Marshal does not tell Google. To take the access back at Google as well, open <a href="https://myaccount.google.com/permissions">your Google account's third-party access page</a> and remove Marshal.</li>
+        <li><strong>At Google:</strong> When you disconnect the last Google connection in Marshal, Marshal asks Google to end the access. While Calendar or Gmail is still connected, the access stays so the other keeps working. If Google cannot be reached, or you want to check, open <a href="https://myaccount.google.com/permissions">your Google account's third-party access page</a> and remove Marshal there.</li>
         <li><strong>At GitHub:</strong> review or remove the App under <a href="https://github.com/settings/apps/authorizations">authorized apps</a> and <a href="https://github.com/settings/installations">installed apps</a>.</li>
         <li><strong>Trello and the others:</strong> use that service's own settings to remove Marshal's access.</li>
       </ul>
